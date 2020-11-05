@@ -1,11 +1,14 @@
 'use strict';
 
 module.exports = function (app) {
-    var jsonku = require('./controller');
+    var jsons = require('./controller');
 
     app.route('/')
-        .get(jsonku.index);
+        .get(jsons.index);
 
     app.route('/list')
-        .get(jsonku.listMahasiswa);
+        .get(jsons.listMahasiswa);
+
+    app.route('/list/:id')
+        .get(jsons.listMahasiswaId);
 }
