@@ -44,3 +44,19 @@ exports.addMahasiswa = function (req, res) {
         }
     });
 };
+
+exports.editMahasiswa = function (req, res) {
+
+    var id = req.body.id;
+    var nim = req.body.nim;
+    var name = req.body.name;
+    var jurusan = req.body.jurusan;
+
+    connection.query('UPDATE mahasiswa SET nim=?, name=?, jurusan=? WHERE id=?', [nim, name, jurusan, id], function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok('Berhasil Di Update', res);
+        }
+    });
+};

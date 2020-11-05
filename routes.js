@@ -14,4 +14,7 @@ module.exports = function (app) {
 
     app.route('/add')
         .post(jsons.addMahasiswa);
+
+    app.route('/edit')
+        .put(jsons.editMahasiswa);
 }
