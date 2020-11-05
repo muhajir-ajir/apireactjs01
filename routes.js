@@ -17,4 +17,7 @@ module.exports = function (app) {
 
     app.route('/edit')
         .put(jsons.editMahasiswa);
+
+    app.route('/delete')
+        .delete(jsons.deletMahasiswa);
 }
